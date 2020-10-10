@@ -5,6 +5,7 @@ import ShoppingCartIcon from "@material-ui/icons/ShoppingCart";
 import { Link } from "react-router-dom";
 import { useStateValue } from "./StateProvider";
 import { auth } from "./Firebase";
+import MenuRoundedIcon from "@material-ui/icons/MenuRounded";
 
 function Header() {
   const handleAuthentication = () => {
@@ -15,6 +16,9 @@ function Header() {
   const [{ basket, user }, disatch] = useStateValue();
   return (
     <div className="header">
+      <div className="header__menu">
+        <MenuRoundedIcon fontSize="large" />
+      </div>
       <Link to="/">
         <img
           src="https://www.pinclipart.com/picdir/big/57-576184_view-our-amazon-storefront-amazon-logo-white-png.png"
@@ -30,7 +34,7 @@ function Header() {
       <div className="header__nav">
         <Link to={!user && "/login"}>
           <div onClick={handleAuthentication} className="header__option">
-            <span className="header__optionlineOne">Hello, Guest</span>
+            <span className="header__optionlineOne">Hello, {user?.email}</span>
             <span className="header__optionlineTwo">
               {user ? "Sign Out" : "Sign In"}
             </span>
@@ -46,7 +50,7 @@ function Header() {
         </div>
         <Link to="/checkout">
           <div className="header__optionBasket">
-            <ShoppingCartIcon />
+            <ShoppingCartIcon fontSize="large" />
             <div className="header__optionlineTwo header__basketCount">
               {basket?.length}
             </div>

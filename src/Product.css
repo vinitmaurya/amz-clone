@@ -9,13 +9,18 @@
   min-width: 100px;
   background-color: white;
   z-index: 1;
+  box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.1), 0 3px 5px 0 rgba(0, 0, 0, 0.1);
 }
 .product > button {
   background-color: #febd69;
   border: 1px solid;
-  margin-top: 10px;
+  margin: 10px 0px;
   border-color: #f3b955 #e28d47 #ec9811;
-  color: #111;
+  color: rgb(36, 22, 22);
+  padding: 4px 10px;
+  font-size: larger;
+  cursor: pointer;
+  font-weight: bold;
 }
 .product > img {
   max-height: 200px;
@@ -26,10 +31,14 @@
 
 .product__price {
   margin-top: 5px;
+  font-size: x-large;
+  color: rgb(180, 0, 0);
+  font-weight: 900;
 }
 .product__info {
   height: 100px;
-  margin-bottom: 15px;
+  margin: 15px 10px;
+  font-weight: 500;
 }
 .product__rating {
   display: flex;
